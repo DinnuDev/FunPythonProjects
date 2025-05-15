@@ -150,8 +150,18 @@ class PatternLockApp:
 
     def show_random(self):
         self.patterns = all_patterns_by_length[self.selected_length]
-        self.current_index = random.randint(0, len(self.patterns) - 1)
-        self.draw_pattern(self.patterns[self.current_index])
+        base_random_pattern = list(self.patterns[random.randint(0, len(self.patterns) - 1)])
+        resolved = self.resolve_skipped_points(base_random_pattern)
+
+        # Update input boxes
+        for i, box in enumerate(self.input_boxes):
+            if i < len(resolved):
+                box.delete(0, tk.END)
+                box.insert(0, str(resolved[i] + 1))  # convert to 1-based
+            else:
+                box.delete(0, tk.END)
+
+        self.draw_pattern(tuple(resolved))
 
     def show_all(self):
         all_window = tk.Toplevel(self.root)
