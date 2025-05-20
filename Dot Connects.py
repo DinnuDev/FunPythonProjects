@@ -6,7 +6,7 @@ import math
 class PatternLockApp:
     def __init__(self, root):
         self.root = root
-        self.root.title("Pattern Lock")
+        self.root.title("Pattern Lock by Dinesh Vutukuru")
         self.root.geometry("500x600")
         self.root.resizable(False, False)
 
