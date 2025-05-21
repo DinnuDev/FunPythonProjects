@@ -1,3 +1,6 @@
+# title: Dot Connect
+
+
 import tkinter as tk
 from itertools import permutations
 import random

@@ -1,4 +1,5 @@
-# Adjusted to process entire sample line in a smarter block rather than per character logic
+# title: Regex Generator Validator
+
 
 import sys
 import re

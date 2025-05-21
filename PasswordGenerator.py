@@ -1,3 +1,6 @@
+# title: Password Generator
+
+
 import customtkinter as ctk
 import string
 import secrets
